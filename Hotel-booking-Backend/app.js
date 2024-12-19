@@ -13,9 +13,9 @@ const app = express();
 
 //  CORS
 app.use(cors({
-    origin: 'http://localhost:3000', // آدرس فرانت‌اند (بدون `/` در انتها)
-    methods: ['GET', 'POST', 'PUT', 'DELETE'], // متدهای مجاز
-    allowedHeaders: ['Content-Type', 'Authorization'], // هدرهای مجاز
+    origin: 'http://localhost:3000', )
+    methods: ['GET', 'POST', 'PUT', 'DELETE'], 
+    allowedHeaders: ['Content-Type', 'Authorization'], 
 }));
 
 app.options('*', cors()); // مدیریت preflight requests
