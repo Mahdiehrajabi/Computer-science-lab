@@ -37,19 +37,19 @@
   }
 }
 
-/* پس‌زمینه برای کل صفحه */
+
 body {
     background-color: #f8f9fa;
     font-family: 'Arial', sans-serif;
 }
 
-/* پس‌زمینه و سایه برای کارت‌های ورود و رزرو */
+
 .card {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* رنگ دکمه‌ها */
+
 .btn-primary {
     background-color: #007bff;
     border-color: #007bff;
@@ -60,17 +60,17 @@ body {
     border-color: #004085;
 }
 
-/* حاشیه‌ها و فاصله‌ها برای کارت‌ها */
+
 .card-body {
     padding: 2rem;
 }
 
-/* زیباسازی فرم‌ها */
+
 .form-group input, .form-group button {
     border-radius: 5px;
 }
 
-/* تنظیمات تیترها */
+
 h2, h3 {
     font-family: 'Roboto', sans-serif;
     font-weight: bold;
