@@ -1,12 +1,11 @@
 const { Sequelize } = require('sequelize');
 
-// تنظیمات اتصال به پایگاه داده
 const sequelize = new Sequelize('hotel', 'sa', 'admin@123', {
     host: 'localhost',
-    dialect: 'postgres', // نوع پایگاه داده
+    dialect: 'postgres',
 });
 
-// بررسی اتصال به پایگاه داده
+
 sequelize.authenticate()
     .then(() => {
         console.log('Connected to PostgreSQL database!');
