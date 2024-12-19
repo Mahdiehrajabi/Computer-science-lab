@@ -1,8 +1,7 @@
 const express = require('express');
-const Room = require('../models/Room'); // مدل اتاق را وارد کنید
+const Room = require('../models/Room'); 
 const router = express.Router();
 
-// مسیر POST برای ایجاد اتاق جدید
 router.post('/', async (req, res) => {
     try {
         const room = await Room.create(req.body);
@@ -12,7 +11,7 @@ router.post('/', async (req, res) => {
     }
 });
 
-// اضافه کردن مسیرهای دیگر به دلخواه (مثلاً برای دریافت اتاق‌ها)
+
 router.get('/', async (req, res) => {
     try {
         const rooms = await Room.findAll();
