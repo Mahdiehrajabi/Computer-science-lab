@@ -1,8 +1,8 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../config/database');
-const Hotel = require('./Hotel'); // مدل هتل
-const Room = require('./Room');   // مدل اتاق
-const User = require('./User');   // مدل کاربر
+const Hotel = require('./Hotel'); 
+const Room = require('./Room');   
+const User = require('./User');   
 
 const Booking = sequelize.define('Booking', {
     id: {
