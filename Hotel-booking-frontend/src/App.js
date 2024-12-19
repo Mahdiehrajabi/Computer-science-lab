@@ -6,10 +6,10 @@ import Login from './pages/Login';
 import Bookings from './pages/Bookings';
 
 const App = () => {
-    const [token, setToken] = useState(localStorage.getItem('token')); // خواندن توکن از localStorage
+    const [token, setToken] = useState(localStorage.getItem('token')); 
 
     useEffect(() => {
-        console.log('Token in App.js:', token); // بررسی مقدار توکن
+        console.log('Token in App.js:', token); 
     }, [token]);
 	
 
