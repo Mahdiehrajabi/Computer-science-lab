@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Hotel</title>
+    <style>
+        /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+        }
+
+        /* Header */
+        header {
+            background: #333;
+            color: #fff;
+            padding: 10px 0;
+        }
+
+        header nav ul {
+            display: flex;
+            justify-content: space-around;
+            list-style: none;
+        }
+
+        header nav ul li {
+            margin: 0 20px;
+        }
+
+        header nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        /* Hero Section */
+        #hero {
+            background: url('hotel-hero.jpg') no-repeat center center/cover;
+            color: #fff;
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        #hero h1 {
+            font-size: 50px;
+            margin-bottom: 10px;
+        }
+
+        #hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+
+        #hero .btn {
+            background-color: #007BFF;
+            color: white;
+            padding: 12px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        #hero .btn:hover {
+            background-color: #0056b3;
+        }
+
+        /* Rating */
+        .star-rating {
+            color: #FFD700;
+            font-size: 20px;
+        }
+
+        /* Booking Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+        }
+
+        .modal-content {
+            background: #fff;
+            width: 400px;
+            margin: 10% auto;
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        .modal-content input, .modal-content textarea, .modal-content button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .modal-content button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .modal-content button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Close Button */
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            cursor: pointer;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+        }
+         /* Hero Section */
+#hero {
+    background: url('5.jpg') no-repeat center center/cover; /* Add your image */
+    color: #fff;
+    padding: 100px 0;
+    text-align: center;
+    position: relative; /* Ensure content is above the background */
+}
+
+
+/* Hero Content */
+.hero-content {
+    z-index: 1; /* Ensure content is above the background */
+}
+
+.hero-content h1 {
+    font-size: 50px;
+    margin-bottom: 10px;
+}
+
+.hero-content p {
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+.hero-content .btn {
+    background-color: #007BFF;
+    color: white;
+    padding: 12px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.hero-content .btn:hover {
+    background-color: #0056b3;
+}
+
+        /* Contact Section */
+        #contact {
+            text-align: center;
+            padding: 40px;
+            background: #f4f4f4;
+        }
+
+        #contact .btn {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        #contact .btn:hover {
+            background-color: #0056b3;
+        }
+/* Sign-Up Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.modal-content {
+    background: #fff;
+    width: 400px;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.modal-content input,
+.modal-content button {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.modal-content button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.modal-content button:hover {
+    background-color: #0056b3;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+}
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #b8a3a3;
+            color: white;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        /* Room Section */
+        .room-section {
+            padding: 40px;
+            background-color: #fff;
+            text-align: center;
+        }
+
+        .room {
+            display: inline-block;
+            width: 250px;
+            margin: 20px;
+            padding: 15px;
+            background-color: #f4f4f4;
+            border-radius: 10px;
+        }
+
+        .room img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .room h3 {
+            margin: 15px 0;
+        }
+
+        .room button {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .room button:hover {
+            background-color: #0056b3;
+        }
+    /* Login Modal Styles */
+    .modal {
+        display: none; /* Hidden by default */
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .modal-content {
+        background-color: #fff;
+        padding: 65px;
+        margin: 10% auto;
+        width: 300px;
+        border-radius: 15px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .modal input[type="text"], .modal input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+    .modal button {
+        padding: 10px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        width: 100%;
+    }
+
+    .modal button:hover {
+        background-color: #45a049;
+    }
+
+    .close {
+        color: #aaa;
+        font-size: 28px;
+        font-weight: bold;
+        position: absolute;
+        top: 0;
+        right: 15px;
+        padding: 16px;
+        cursor: pointer;
+    }
+
+
+    .close:hover,
+    .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    /* Beautiful Sticky Footer */
+    footer {
+        background: linear-gradient(45deg, #f39c12, #e74c3c); /* Gradient background */
+        color: white;
+        padding: 30px;
+        text-align: center;
+        position: relative;
+        z-index: 2;
+        box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    footer p {
+        margin: 10px 0;
+        font-size: 18px;
+    }
+
+    footer a {
+        color: white;
+        text-decoration: none;
+        margin: 0 10px;
+    }
+    footer a:hover {
+        text-decoration: underline;
+    }
+
+    /* Sticky Footer Effect */
+    .footer-container {
+        flex-shrink: 0; /* Prevents the footer from shrinking */
+    }
+
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Rooms</a></li>
+                <li><a href="#signUpModal" class="btn" onclick="openSignUpModal()">Sign Up</a></li> <!-- Sign Up Button -->
+                <li><a href="#loginModal" class="btn" onclick="openLoginModal()">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="hero-content">
+            <h1>Welcome to Luxury Hotel</h1>
+            <p>Your perfect stay awaits.</p>
+        </div>
+    </section>
+   
+
+    <!-- Login Modal -->
+<div id="loginModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Login</h2>
+        <form action="#">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+</div>
+
+ <!-- Sign Up Modal -->
+ <div id="signUpModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeSignUpModal()">&times;</span>
+        <h2>Sign Up</h2>
+        <form action="#">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <label for="contact">Contact Number:</label>
+            <input type="text" id="contact" name="contact" required>
+
+            <button type="submit">Sign Up</button>
+        </form>
+    </div>
+</div>
+
+    <!-- Room Section -->
+    <section class="room-section">
+        <h2>Our Rooms</h2>
+        <div class="room">
+            <img src="9.jpg" alt="Room 1">
+            <h3>Standard Room</h3>
+            <p>$100 per night</p>
+            <p>This room feature is cozy atmosphere perfect for a relaxing getaway.</p>
+            <button onclick="openBookingModal()">Reserve Now</button>
+        </div>
+        <div class="room">
+            <img src="7.jpg" alt="Room 2">
+            <h3>Deluxe Room</h3>
+            <p>$150 per night</p>
+            <p>A luxurious room with a king-sized bed, modern amenities, and stunning views of the city.</p>
+            <button onclick="openBookingModal()">Reserve Now</button>
+        </div>
+        <div class="room">
+            <img src="8.jpg" alt="Room 3">
+            <h3>Presidential Suite</h3>
+            <p>$300 per night</p>
+            <p>The ultimate in luxury, this suite includes a private living room and premium facilities.</p>
+            <button onclick="openBookingModal()">Reserve Now</button>
+        </div>
+    </section>
+
+
+
+
+    <!-- Booking Modal -->
+    <div id="bookingModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeBookingModal()">&times;</span>
+            <h2>Book Your Stay</h2>
+            <form action="#">
+                <label for="checkin-date">Check-in Date:</label>
+                <input type="date" id="checkin-date" name="checkin" required>
+
+                <label for="checkout-date">Check-out Date:</label>
+                <input type="date" id="checkout-date" name="checkout" required>
+
+                <label for="guests">Number of Guests:</label>
+                <input type="number" id="guests" name="guests" min="1" required>
+
+                <button type="submit">Book Now</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>If you have any questions or need assistance, feel free to reach out.</p>
+        <a href="#contactModal" class="btn" onclick="openContactModal()">Contact Us</a>
+    </section>
+
+    <!-- Contact Modal -->
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeContactModal()">&times;</span>
+            <h2>Contact Us</h2>
+            <form action="#">
+                <input type="text" id="name" name="name" placeholder="Full Name" required>
+                <input type="email" id="email" name="email" placeholder="Email Address" required>
+                <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </div>
+<!-- Footer Section (Footbar) -->
+<footer>
+    <p>&copy; 2024 Luxury Hotel. All rights reserved.</p>
+    <p>
+        <a href="#">Privacy Policy</a> | 
+        <a href="#">Terms & Conditions</a> 
+        
+    </p>
+</footer>
+
+
+    <!-- JavaScript -->
+    <script>
+        // Booking Modal
+        var bookingModal = document.getElementById("bookingModal");
+        function openBookingModal() { bookingModal.style.display = "block"; }
+        function closeBookingModal() { bookingModal.style.display = "none"; }
+        <!-- JavaScript -->
+    
+            // Booking Modal
+            var bookingModal = document.getElementById("bookingModal");
+            function openBookingModal() { bookingModal.style.display = "block"; }
+            function closeBookingModal() { bookingModal.style.display = "none"; }
+    // Sign Up Modal
+var signUpModal = document.getElementById("signUpModal");
+
+function openSignUpModal() { 
+    signUpModal.style.display = "block"; 
+}
+
+function closeSignUpModal() { 
+    signUpModal.style.display = "none"; 
+}
+
+            // Login Modal
+            var loginModal = document.getElementById("loginModal");
+            function openLoginModal() { loginModal.style.display = "block"; }
+            function closeLoginModal() { loginModal.style.display = "none"; }
+        // Contact Modal
+        var contactModal = document.getElementById("contactModal");
+        function openContactModal() { contactModal.style.display = "block"; }
+        function closeContactModal() { contactModal.style.display = "none"; }
+
+        // Close modals if clicked outside
+        window.onclick = function(event) {
+            if (event.target == bookingModal) closeBookingModal();
+            if (event.target == contactModal) close
+            if (event.target == contactModal) closeContactModal();
+        }
+    </script>
+
+</body>
+</html>
