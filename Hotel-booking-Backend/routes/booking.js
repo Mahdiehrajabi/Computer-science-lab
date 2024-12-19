@@ -1,9 +1,9 @@
 const express = require('express');
-const Booking = require('../models/Booking'); // مدل رزرو را وارد کنید
+const Booking = require('../models/Booking'); 
 const router = express.Router();
-const authenticateToken = require('../middleware/auth');  // وارد کردن middleware
+const authenticateToken = require('../middleware/auth');  
 
-// مسیر POST برای ایجاد رزرو جدید
+
 router.post('/', async (req, res) => {
     try {
         const booking = await Booking.create(req.body);
@@ -16,8 +16,8 @@ router.post('/', async (req, res) => {
 
 router.get('/', async (req, res) => {
     try {
-        const bookings = await Booking.findAll();  // تمام رزروها را دریافت کنید
-        res.status(200).json(bookings); // بازگشت رزروها به عنوان پاسخ
+        const bookings = await Booking.findAll(); 
+        res.status(200).json(bookings); 
     } catch (err) {
         res.status(500).json({ error: 'Error fetching bookings' });
     }
@@ -63,7 +63,7 @@ router.get('/:id', async (req, res) => {
 
 router.get('/', authenticateToken, async (req, res) => {
     try {
-        // فقط رزروهای مربوط به کاربر جاری را نمایش دهید
+        
         const bookings = await Booking.findAll({
             where: { userId: req.user.id }  // فیلتر کردن بر اساس userId
         });
